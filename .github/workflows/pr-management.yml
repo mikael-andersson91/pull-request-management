@@ -36,6 +36,9 @@ jobs:
           message: "Hello there reviewer"
           comment_tag: reviewer
           
+      - run: echo "event name is:" ${{ github.event_name }} 
+      - run: echo "event type is:" ${{ github.event.action }} 
+
 
       - name: Comment PR reviewer
         uses: thollander/actions-comment-pull-request@v2
