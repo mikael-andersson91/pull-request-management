@@ -35,10 +35,15 @@ jobs:
         with:
           message: "Hello there reviewer"
           comment_tag: reviewer
-          
+
 
       - name: Comment PR reviewer
         uses: thollander/actions-comment-pull-request@v2
         with:
           message: "Hello there author"
           comment_tag: author
+          
+
+      - run: echo 'hello ${{ github.event.author }}'
+      
+      - run: echo '${{ github.event.requested_team }}'
