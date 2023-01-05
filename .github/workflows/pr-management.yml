@@ -26,7 +26,9 @@ jobs:
     steps: 
     - name: Conventional Pull Request
       uses: CondeNast/conventional-pull-request-action@v0.1.2
-      
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
   comment-pr:
     runs-on: ubuntu-latest
     if: ${{ github.event.action == 'opened' && github.event_name == 'pull_request' }}
