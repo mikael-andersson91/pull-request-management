@@ -22,7 +22,23 @@ jobs:
           sync-labels: true
 
   conventional-pr:
-    runs-on: ubuntu
+    runs-on: ubuntu-latest
     steps: 
     - name: Conventional Pull Request
       uses: CondeNast/conventional-pull-request-action@v0.1.2
+      
+  comment-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Comment PR reviewer
+        uses: thollander/actions-comment-pull-request@v2
+        with:
+          message: "Hello there reviewer"
+          comment_tag: reviewer
+          
+
+      - name: Comment PR reviewer
+        uses: thollander/actions-comment-pull-request@v2
+        with:
+          message: "Hello there author"
+          comment_tag: author
