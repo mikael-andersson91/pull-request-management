@@ -30,7 +30,15 @@ jobs:
   comment-pr:
     runs-on: ubuntu-latest
     steps:
-      - name: Comment PR
+      - name: Comment PR reviewer
         uses: thollander/actions-comment-pull-request@v2
         with:
-          message: "Hello there"
+          message: "Hello there reviewer"
+          comment_tag: reviewer
+          
+
+      - name: Comment PR reviewer
+        uses: thollander/actions-comment-pull-request@v2
+        with:
+          message: "Hello there author"
+          comment_tag: author
