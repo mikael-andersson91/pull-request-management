@@ -28,7 +28,7 @@ jobs:
       uses: CondeNast/conventional-pull-request-action@v0.1.2
       
   comment-pr:
-    if: ${{ github.event.action == 'opened' && github.event.name == 'pull_request' }}
+    if: ${{ github.event.action == 'opened'  }}
     runs-on: ubuntu-latest
     steps:
       - name: Comment PR reviewer
