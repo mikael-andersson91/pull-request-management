@@ -39,7 +39,6 @@ jobs:
       - run: echo "event name is:" ${{ github.event_name }} 
       - run: echo "event type is:" ${{ github.event.action }} 
 
-
       - name: Comment PR reviewer
         uses: thollander/actions-comment-pull-request@v2
         with:
