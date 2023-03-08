@@ -31,25 +31,23 @@ jobs:
 
   comment-pr:
     runs-on: ubuntu-latest
-    if: ${{ github.event.action == 'opened' && github.event_name == 'pull_request' }}
+    # if: ${{ github.event.action == 'opened' && github.event_name == 'pull_request' }}
     steps:
       - name: Comment PR reviewer
         uses: thollander/actions-comment-pull-request@v2
         with:
           message: | 
+            SHA : ${{ github.sha }}
             ### Author Checklist 
             - [ ] Describe the changes that have been made from the main branch.
             - [ ] Describe why these changes have been made.
-            - [ ] Link to related Jira Card if applicable
-            - [ ] Link any related GitHub issues to the pull request so they get closed when the pull request is merged.
-            - [ ] Confirm that the code is up to date with the main branch before trying to merge.
-            - [ ] Assign at least one other team member as a reviewer for the pull request. The pull request cannot be merged unless an approval has been submitted.
 
             ### Reviewer Checklist
             - [ ] Does the description provided in the pull request make sense and describe the actual changes made?
             - [ ] Do the changes make sense? 
             - [ ] Are the changes covered by automated tests? 
           comment_tag: reviewer
+          mode: upsert
           
       - run: echo "event name is:" ${{ github.event_name }} 
       - run: echo "event type is:" ${{ github.event.action }} 
