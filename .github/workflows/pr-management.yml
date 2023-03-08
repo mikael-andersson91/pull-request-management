@@ -47,7 +47,7 @@ jobs:
             - [ ] Do the changes make sense? 
             - [ ] Are the changes covered by automated tests? 
           comment_tag: reviewer
-          mode: upsert
+          mode: recreate #upsert
           
       - run: echo "event name is:" ${{ github.event_name }} 
       - run: echo "event type is:" ${{ github.event.action }} 
