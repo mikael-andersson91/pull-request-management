@@ -28,15 +28,14 @@ jobs:
       uses: CondeNast/conventional-pull-request-action@v0.1.2
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        
-  commitsar:
+
+  commitlint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
         with:
-          fetch_depth: 0
-      - name: Commitsar Action
-        uses: aevea/commitsar@v0.20.1
+          fetch-depth: 0
+      - uses: wagoid/commitlint-github-action@v5
 
   comment-pr:
     runs-on: ubuntu-latest
