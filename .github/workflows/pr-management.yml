@@ -21,6 +21,13 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           sync-labels: true
 
+  commitsar: 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Commitsar Action
+        uses: aevea/commitsar@v0.20.1
+
+
   conventional-pr:
     runs-on: ubuntu-latest
     steps: 
