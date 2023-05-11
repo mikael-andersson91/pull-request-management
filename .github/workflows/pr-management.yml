@@ -29,13 +29,16 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-  commitlint:
+  commitsar: 
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
         with:
           fetch-depth: 0
-      - uses: wagoid/commitlint-github-action@v5
+      - name: Commitsar Action
+        uses: aevea/commitsar@v0.20.1
+        with:
+          config: ${{ github.workspace }}/.commitsar.yaml
 
   comment-pr:
     runs-on: ubuntu-latest
@@ -45,18 +48,7 @@ jobs:
         uses: thollander/actions-comment-pull-request@v2
         with:
           message: | 
-            ### Author Checklist 
-            - [ ] Describe the changes that have been made from the main branch.
-            - [ ] Describe why these changes have been made.
-            - [ ] Link to related Jira Card if applicable
-            - [ ] Link any related GitHub issues to the pull request so they get closed when the pull request is merged.
-            - [ ] Confirm that the code is up to date with the main branch before trying to merge.
-            - [ ] Assign at least one other team member as a reviewer for the pull request. The pull request cannot be merged unless an approval has been submitted.
-
-            ### Reviewer Checklist
-            - [ ] Does the description provided in the pull request make sense and describe the actual changes made?
-            - [ ] Do the changes make sense? 
-            - [ ] Are the changes covered by automated tests? 
+            Hello there
           comment_tag: reviewer
           
       - run: echo "event name is:" ${{ github.event_name }} 
