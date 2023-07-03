@@ -2,8 +2,9 @@ version: 1
 verbose: true
 commits:
   strict: true
-  disabled: true
+  disabled: false
 pull_request:
+  conventional: true
   jira_title: true
   jira_keys: 
     - MIKAEL
