@@ -1,8 +1,8 @@
+version: 1
 verbose: true
 commits:
-  disabled: true
   strict: false
-  upstreamBranch: origin/main
+  disabled: false
 
 pull_request:
   conventional: true
