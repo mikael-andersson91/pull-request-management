@@ -5,6 +5,3 @@ commits:
   disabled: false
 pull_request:
   conventional: true
-  jira_title: true
-  jira_keys: 
-    - MIKAEL
