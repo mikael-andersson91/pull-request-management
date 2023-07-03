@@ -4,6 +4,4 @@ commits:
   strict: true
   disabled: false
 pull_request:
-  jira_title: true
-  jira_keys:
-    - MIKAEL
+  conventional: true
